@@ -71,13 +71,7 @@ describe('reducer', () => {
           category: '',
           address: '',
         },
-        restaurants: [
-          {
-            name: '마녀주방',
-            category: '한식',
-            address: '서울시 강남구',
-          },
-        ],
+        restaurants: [],
       });
     });
   });
