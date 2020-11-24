@@ -16,9 +16,7 @@ export default function InputContainer() {
     fields: state.fields,
   }));
 
-  function handleChangeField(event) {
-    const { name, value } = event.target;
-
+  function handleChangeField({ name, value }) {
     dispatch(changeField({ name, value }));
   }
 

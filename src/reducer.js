@@ -1,9 +1,11 @@
+const initialFields = {
+  name: '',
+  category: '',
+  address: '',
+};
+
 const initialState = {
-  fields: {
-    name: '',
-    category: '',
-    address: '',
-  },
+  fields: initialFields,
   restaurants: [],
 };
 
@@ -31,18 +33,10 @@ function reducer(state = initialState, action = {}) {
 
     return {
       ...state,
-      fields: {
-        name: '',
-        category: '',
-        address: '',
-      },
+      fields: initialFields,
       restaurants: [
         ...state.restaurants,
-        {
-          name,
-          category,
-          address,
-        },
+        { name, category, address },
       ],
     };
   }
