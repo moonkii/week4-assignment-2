@@ -3,7 +3,7 @@ import reducer from './reducer';
 import {
   setRestaurants,
   changeRestaurantField,
-  addRestaurant,
+  addRestaurant, setCategories,
 } from './actions';
 
 import restaurants from '../../fixtures/restaurants';
@@ -60,6 +60,19 @@ describe('reducer', () => {
       expect(state.restaurant.name).toBe('');
 
       expect(state.newId).toBe(101);
+    });
+  });
+
+  describe('setCategories', () => {
+    it('changes categories', () => {
+      const categories = [{ id: 1, name: '한식' }];
+      const initialState = {
+        categories: [],
+      };
+
+      const state = reducer(initialState, setCategories(categories));
+
+      expect(state.categories).toHaveLength(1);
     });
   });
 });
